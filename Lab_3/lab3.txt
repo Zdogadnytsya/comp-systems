@@ -83,3 +83,7 @@ mysql> SELECT user, host FROM mysql.user;
 | mysql.sys        | localhost |
 +------------------+-----------+
 5 rows in set (0.00 sec)
+
+Запустіть контейнер PHPMyAdmin із прокинутим портом 8080
+
+docker run -d --name myadmin --link mysql:db -e PMA_HOST=mysql -e PMA_USER=root -e PMA_PASSWORD=password -p 8080:80 phpmyadmin/phpmyadmin:latest
