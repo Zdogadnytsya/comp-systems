@@ -1,1 +1,68 @@
-ba
+Відкрийте термінал та перейдіть до кореневої директорії проекту. Введіть наступну команду для збірки контейнера:
+Запустіть Docker контейнер, використовуючи наступну команду:
+
+C:\Users\alexa\Desktop\TCS\Lab_2>docker build myapp .
+[+] Building 72.9s (6/8)                                                                                 docker:default
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                        2.1s
+ => [auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+[+] Building 73.2s (6/8)                                                                                 docker:default
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+[+] Building 74.0s (6/8)                                                                                 docker:default
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                        2.1s
+ => [auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+ => [1/3] FROM docker.io/library/python:3@sha256:b7a504dd0affeb20cf1ba1d3219f854c889c7ad557a2a5a4c4aba19cadd075f  54.3s
+[+] Building 74.2s (6/8)                                                                                 docker:default
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+[+] Building 138.7s (9/9) FINISHED                                                                       docker:default
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 116B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                        2.1s
+ => [auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+ => [1/3] FROM docker.io/library/python:3@sha256:b7a504dd0affeb20cf1ba1d3219f854c889c7ad557a2a5a4c4aba19cadd075f  54.3s
+ => => resolve docker.io/library/python:3@sha256:b7a504dd0affeb20cf1ba1d3219f854c889c7ad557a2a5a4c4aba19cadd075f1  0.1s
+ => => sha256:b7a504dd0affeb20cf1ba1d3219f854c889c7ad557a2a5a4c4aba19cadd075f1 2.14kB / 2.14kB                     0.0s
+ => => sha256:94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826 2.01kB / 2.01kB                     0.0s
+ => => sha256:c0e63845ae986c52da5cd6ac4d56eebf293439bb22a3cee198dd818fd12ba555 7.53kB / 7.53kB                     0.0s
+ => => sha256:d52e4f012db158bb7c0fe215b98af1facaddcbaee530efd69b1bae07d597b711 49.55MB / 49.55MB                  11.5s
+ => => sha256:7dd206bea61ff3e3b54be1c20b58d8475ddd6f89df176146ddb7a2fd2c747ea2 24.03MB / 24.03MB                   7.0s
+ => => sha256:2320f9be4a9c605d1ac847cf67cec42b91484a7cf7c94996417a0c7c316deadc 64.11MB / 64.11MB                  19.0s
+ => => sha256:6e5565e0ba8dfce32b9049f21ceeb212946e0bb810d94cbd2db94ca61082f657 211.00MB / 211.00MB                34.6s
+ => => sha256:d3797e13cc41e1387a937908677cc66838a672cdc8ba8de9b966f1801723d07b 6.39MB / 6.39MB                    13.5s
+ => => extracting sha256:d52e4f012db158bb7c0fe215b98af1facaddcbaee530efd69b1bae07d597b711                          3.6s
+ => => sha256:70f90dfe001bab12bb117972f14fb9429be3d5af96cc78084e8bd0c53b635ea3 19.76MB / 19.76MB                  19.1s
+ => => extracting sha256:7dd206bea61ff3e3b54be1c20b58d8475ddd6f89df176146ddb7a2fd2c747ea2                          0.9s
+ => => extracting sha256:2320f9be4a9c605d1ac847cf67cec42b91484a7cf7c94996417a0c7c316deadc                          3.7s
+ => => sha256:bd75605de417c150af6942a796e71c4bcd8567194d2c2a1e9ed90d8660550a39 244B / 244B                        19.6s
+ => => sha256:3d0e1a4b14bc5f3e735fb7730c802b651d49d295a8ff12b8661d6c0e5653485e 3.09MB / 3.09MB                    20.7s
+ => => extracting sha256:6e5565e0ba8dfce32b9049f21ceeb212946e0bb810d94cbd2db94ca61082f657                         17.5s
+ => => extracting sha256:d3797e13cc41e1387a937908677cc66838a672cdc8ba8de9b966f1801723d07b                          0.4s
+ => => extracting sha256:70f90dfe001bab12bb117972f14fb9429be3d5af96cc78084e8bd0c53b635ea3                          0.7s
+ => => extracting sha256:bd75605de417c150af6942a796e71c4bcd8567194d2c2a1e9ed90d8660550a39                          0.0s
+ => => extracting sha256:3d0e1a4b14bc5f3e735fb7730c802b651d49d295a8ff12b8661d6c0e5653485e                          0.3s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 56B                                                                                   0.0s
+ => [2/3] COPY app.py /                                                                                           68.2s
+ => [3/3] RUN pip install flask                                                                                   13.2s
+ => exporting to image                                                                                             0.4s
+ => => exporting layers                                                                                            0.3s
+ => => writing image sha256:cf22307edc6356b7acdd1db22f0c892f150c169fae282e34cf25b582f41e3810                       0.0s
+ => => naming to docker.io/library/myapp                                                                           0.0s
+
+What's Next?
+  View summary of image vulnerabilities and recommendations → docker scout quickview
+
+C:\Users\alexa\Desktop\TCS\Lab_2>docker run myapp
+Hello, World!
+
+На вибраній мові програмування напишіть програму, яка зчитує текст цієї лабораторної роботи із файлу і виводить його у термінал.
+Створіть Dockerfile для запуску цієї програми у контейнері.
+Зберіть та запустіть створений контейнер.
+
