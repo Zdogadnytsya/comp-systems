@@ -35,3 +35,22 @@ C:\Users\alexa\Desktop\TCS\Lab_5>docker-compose ps
 NAME                IMAGE                COMMAND                  SERVICE             CREATED             STATUS              PORTS
 lab_5-kafka-1       wurstmeister/kafka   "start-kafka.sh"         kafka               29 seconds ago      Up 17 seconds       0.0.0.0:9092->9092/tcp
 lab_5-zookeeper-1   zookeeper            "/docker-entrypoint.…"   zookeeper           33 seconds ago      Up 22 seconds       2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp
+
+
+На довільній мові програмування створіть два сервіси:
+Перший сервіс кожних 5 секунд відправляє повідомлення у топік common із поточним часом з точністю до секунди.
+Другий сервіс чекає повідомлення у топіку common та виводить його вміст у термінал, як тільки воно там з’являється.
+Додайте код сервісів у репозиторій та налаштуйте їх запуск у docker-compose.yaml
+
+C:\Users\alexa>cd C:\Users\alexa\Desktop\TCS\Lab_5\services
+
+C:\Users\alexa\Desktop\TCS\Lab_5\services>docker compose up -d
+[+] Running 3/4
+ ✔ Container services-consumer-1   Running                                                                         0.0s
+ ✔ Container services-zookeeper-1  Running                                                                         0.0s
+ ✔ Container services-producer-1   Started                                                                         0.0s
+ - Container services-kafka-1      Starting                                                                        0.2s
+Error response from daemon: driver failed programming external connectivity on endpoint services-kafka-1 (a44c790122291d9508ba571f54d9c163131f8cfc058145e871c5a2fd62ff298e): Bind for 0.0.0.0:9092 failed: port is already allocated
+
+C:\Users\alexa\Desktop\TCS\Lab_5\services>docker-compose logs
+далі скріншоти
