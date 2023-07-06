@@ -39,3 +39,12 @@ What's Next?
 
 C:\Users\alexa\Desktop\TCS\Lab_3>docker run -p 8080:80 -v /path/to/server:/var/www/html/ webserver
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+
+Запустити базу даних MySQL та PHPMyAdmin у Docker контейнерах та зробити їх доступними на локальному порту.
+
+Створіть каталог mysql та у ньому каталог data та додайте його у .gitignore.
+Завантажте образ MySQL з Docker Hub
+Запустіть контейнер зі змонтованим сховищем у каталог із даними та прокинутим портом 3306
+
+C:\Users\alexa>docker run -d -p 3306:3306 --name=mysql -v C:/Users/alexa/Desktop/TCS/Lab_03/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test_db mysql/mysql-server:latest
+eb1d0da7fc866795aac581fbd9b42eb399d96519de881e53364a694956dd25e5
