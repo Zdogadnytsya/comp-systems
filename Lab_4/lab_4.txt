@@ -10,3 +10,12 @@ C:\Users\alexa\Desktop\TCS\Lab_3>docker compose up -d
  ✔ Container lab_3-phpmyadmin-1  Started                                                                           0.8s
 
 Запускається воно нормально, але залогінитись чомусь не можу. Можливо щось наплутав з юзернеймом 
+
+C:\Users\alexa>cd C:\Users\alexa\Desktop\TCS\Lab_4\time_checker
+
+C:\Users\alexa\Desktop\TCS\Lab_4\time_checker>docker compose up -d
+[+] Building 0.2s (4/4) FINISHED
+[+] Running 3/3
+ ✔ Network time_checker_default      Created                                                                       0.0s
+ ✔ Container time_checker-creator-1  Started                                                                       0.7s
+ ✔ Container time_checker-checker-1  Started
