@@ -1,0 +1,17 @@
+version: "3"
+services:
+  creator:
+    build:
+      context: .
+      dockerfile: Dockerfile.create
+    volumes:
+      - ./screen:/app/screen
+    restart: always
+
+  checker:
+    build:
+      context: .
+      dockerfile: Dockerfile.check
+    volumes:
+      - ./screen:/app/screen
+    restart: always
