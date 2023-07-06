@@ -1,23 +1,74 @@
-Пункт 4:
-2023-07-06 14:02:52 
-2023-07-06 14:02:52 Hello from Docker!
-2023-07-06 14:02:52 This message shows that your installation appears to be working correctly.
-2023-07-06 14:02:52 
-2023-07-06 14:02:52 To generate this message, Docker took the following steps:
-2023-07-06 14:02:52  1. The Docker client contacted the Docker daemon.
-2023-07-06 14:02:52  2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-2023-07-06 14:02:52     (amd64)
-2023-07-06 14:02:52  3. The Docker daemon created a new container from that image which runs the
-2023-07-06 14:02:52     executable that produces the output you are currently reading.
-2023-07-06 14:02:52  4. The Docker daemon streamed that output to the Docker client, which sent it
-2023-07-06 14:02:52     to your terminal.
-2023-07-06 14:02:52 
-2023-07-06 14:02:52 To try something more ambitious, you can run an Ubuntu container with:
-2023-07-06 14:02:52  $ docker run -it ubuntu bash
-2023-07-06 14:02:52 
-2023-07-06 14:02:52 Share images, automate workflows, and more with a free Docker ID:
-2023-07-06 14:02:52  https://hub.docker.com/
-2023-07-06 14:02:52 
-2023-07-06 14:02:52 For more examples and ideas, visit:
-2023-07-06 14:02:52  https://docs.docker.com/get-started/
-2023-07-06 14:02:52
+Не маю жодного досвіду роботи з цим всім, тому підглядав в лаби Шупрудька Максима
+Пункт 5-6: Викачати та запустити локально образ контейнеру hello-world - Official Image | Docker Hub 
+Задокументувати у файл результат запуску контейнера та його версію.
+
+ Hello from Docker!
+ This message shows that your installation appears to be working correctly.
+ 
+ To generate this message, Docker took the following steps:
+  1. The Docker client contacted the Docker daemon.
+  2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+     (amd64)
+  3. The Docker daemon created a new container from that image which runs the
+     executable that produces the output you are currently reading.
+  4. The Docker daemon streamed that output to the Docker client, which sent it
+     to your terminal.
+ 
+ To try something more ambitious, you can run an Ubuntu container with:
+  $ docker run -it ubuntu bash
+ 
+ Share images, automate workflows, and more with a free Docker ID:
+  https://hub.docker.com/
+ 
+ For more examples and ideas, visit:
+  https://docs.docker.com/get-started/
+
+
+Пункт 7-8:
+Викачати та запустити локально образ контейнеру ellerbrock/alpine-bash-git - Docker Image
+Запустити у контейнері alpine-bash-git інтерфейс командного рядка, задокументувати ім’я користувача, вміст кореневого каталогу системи та версію git.
+
+C:\Users\alexa>docker run -it -d --name lab1 --entrypoint /bin/bash ellerbrock/alpine-bash-git
+eb77ea704fc775696122934a238714db0cbeed0d0b28ce51eab1cebb36fba381
+
+C:\Users\alexa>docker exec -it lab1 bash
+bash-4.4$ git --version
+git version 2.18.1
+bash-4.4$ cd /
+bash-4.4$ ls
+bin    dev    etc    home   lib    media  mnt    proc   root   run    sbin   srv    sys    tmp    usr    var
+bash-4.4$ exit
+exit
+
+Пункт 9: Склонувати у контейнер в домашній каталог користувача довільний репозиторій та задокументувати результат роботи команди і вміст домашнього каталогу.
+
+C:\Users\alexa>docker exec -it lab1 bash
+bash-4.4$ cd /
+bash-4.4$ cd home/downloads
+bash: cd: home/downloads: No such file or directory
+bash-4.4$ cd home
+bash-4.4$ cd downloads
+bash: cd: downloads: No such file or directory
+bash-4.4$ ls
+download
+bash-4.4$ cd download
+bash-4.4$ git clone https://github.com/Zdogadnytsya/Archiver.git
+Cloning into 'Archiver'...
+Username for 'https://github.com': Zdogadnytsya
+Password for 'https://Zdogadnytsya@github.com':
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 23 (delta 2), reused 23 (delta 2), pack-reused 0
+Unpacking objects: 100% (23/23), done.
+
+Пункт 10: Вийти із поточного контейнера та перезапустити його. Запустити у контейнері командний рядок та задокументувати вміст домашнього каталогу після перезапуску.
+
+C:\Users\alexa>docker restart lab1
+lab1
+
+C:\Users\alexa>docker exec -it lab1 bash
+bash-4.4$ ls
+Archiver
+bash-4.4$ exit
+exit
