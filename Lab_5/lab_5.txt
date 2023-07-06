@@ -1,0 +1,37 @@
+Створіть docker-compose.yaml із наступним вмістом:
+Створіть мережу lab та запустіть вказані сервіси. Додайте до каталогу скріншот, який демонструє, що вони успішно запущені.
+
+C:\Users\alexa>cd C:\Users\alexa\Desktop\TCS\Lab_5
+
+C:\Users\alexa\Desktop\TCS\Lab_5>docker compose up -d
+[+] Running 17/17
+ ✔ kafka 7 layers [⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                                59.1s
+   ✔ 42c077c10790 Pull complete                                                                                   51.0s
+   ✔ 44b062e78fd7 Pull complete                                                                                   51.3s
+   ✔ b3ba9647f279 Pull complete                                                                                   51.4s
+   ✔ 10c9a58bd495 Pull complete                                                                                   52.9s
+   ✔ ed9bd501c190 Pull complete                                                                                   53.4s
+   ✔ 03346d650161 Pull complete                                                                                   56.5s
+   ✔ 539ec416bc55 Pull complete                                                                                   56.8s
+ ✔ zookeeper 8 layers [⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                           17.5s
+   ✔ 9d19ee268e0d Pull complete                                                                                   11.4s
+   ✔ 32db0ad82863 Pull complete                                                                                   12.7s
+   ✔ e01bb55fbcae Pull complete                                                                                   13.9s
+   ✔ 297c6e3f57ee Pull complete                                                                                   14.0s
+   ✔ 49c4f235b5f6 Pull complete                                                                                   14.1s
+   ✔ 82b2637e3748 Pull complete                                                                                   14.3s
+   ✔ 49f6df6fb85b Pull complete                                                                                   15.2s
+   ✔ e7e1ad511904 Pull complete                                                                                   15.2s
+network lab declared as external, but could not be found
+
+C:\Users\alexa\Desktop\TCS\Lab_5>docker network create lab
+6f94576b9067a0b17fc60d013bde5cf271cd2d7dbfd612df378b9b0c7d63bf4f
+
+[+] Running 2/2Desktop\TCS\Lab_5>docker compose up -d
+ ✔ Container lab_5-zookeeper-1  Started                                                                           15.1s
+ ✔ Container lab_5-kafka-1      Started                                                                           12.0s
+
+C:\Users\alexa\Desktop\TCS\Lab_5>docker-compose ps
+NAME                IMAGE                COMMAND                  SERVICE             CREATED             STATUS              PORTS
+lab_5-kafka-1       wurstmeister/kafka   "start-kafka.sh"         kafka               29 seconds ago      Up 17 seconds       0.0.0.0:9092->9092/tcp
+lab_5-zookeeper-1   zookeeper            "/docker-entrypoint.…"   zookeeper           33 seconds ago      Up 22 seconds       2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp
